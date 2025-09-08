@@ -1,6 +1,18 @@
 import type { Metadata } from 'next'
+import localFont from 'next/font/local'
 import './globals.css'
 import AppFrame from '@/components/layout/AppFrame'
+
+// Local IranSans font setup (preloaded and applied globally)
+const iranSans = localFont({
+  src: [
+    { path: '../public/fonts/iransansx-light.woff', weight: '300', style: 'normal' },
+    { path: '../public/fonts/iransansx-regular.woff', weight: '400', style: 'normal' },
+    { path: '../public/fonts/iransansx-bold.woff', weight: '700', style: 'normal' },
+  ],
+  display: 'swap',
+  variable: '--font-iran',
+})
 
 export const metadata: Metadata = {
   title: 'املاک پلاس - بهترین پلتفرم املاک ایران',
@@ -59,10 +71,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fa" dir="rtl" className="dark">
+    <html lang="fa" dir="rtl" className={`${iranSans.variable} dark`}>
       <head>
       </head>
-      <body className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900 text-gray-900 dark:text-gray-100">
+      <body className={`${iranSans.className} min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900 text-gray-900 dark:text-gray-100`}>
         <AppFrame>
           {children}
         </AppFrame>

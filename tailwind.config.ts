@@ -11,7 +11,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['IranSansX', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-iran)', 'system-ui', 'sans-serif'],
       },
       colors: {
         primary: {

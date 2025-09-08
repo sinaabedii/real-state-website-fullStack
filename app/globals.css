@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  font-family: "IranSansX", system-ui, sans-serif;
+  font-family: var(--font-iran), system-ui, sans-serif;
 }
 
 * {
@@ -13,11 +13,11 @@
 }
 
 html {
-  font-family: "IranSansX", sans-serif;
+  font-family: var(--font-iran), system-ui, sans-serif;
 }
 
 body {
-  font-family: "IranSansX", sans-serif;
+  font-family: var(--font-iran), system-ui, sans-serif;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -29,7 +29,8 @@ body {
 @font-face {
   font-family: "IranSansX";
   font-weight: 400;
-  src: url("/fonts/iransansx-regular.woff") format("woff");
+  src: url("/fonts/iransansx-regular.woff") format("woff"),
+       url("/fonts/IRANSans.ttf") format("truetype");
   font-display: swap;
 }
 
@@ -43,7 +44,8 @@ body {
 @font-face {
   font-family: "IranSansX";
   font-weight: 700;
-  src: url("/fonts/iransansx-bold.woff") format("woff");
+  src: url("/fonts/iransansx-bold.woff") format("woff"),
+       url("/fonts/IranSansBold.ttf") format("truetype");
   font-display: swap;
 }
 
