@@ -2,11 +2,10 @@
 
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, FileText, Download, Share2, TrendingUp, MapPin, Calendar, Eye, Star, Building, CheckCircle, AlertTriangle, Info } from 'lucide-react'
+import { X, FileText, Download, Share2, TrendingUp, Star, Building, CheckCircle, AlertTriangle } from 'lucide-react'
 import { Button, Card, Badge } from '@/design-system'
-import { formatPrice, formatArea, formatDate, getPropertyTypeLabel, getListingTypeLabel } from '@/lib/utils'
+import { formatPrice, formatArea, getPropertyTypeLabel, getListingTypeLabel } from '@/lib/utils'
 import { Property } from '@/types'
-import Image from 'next/image'
 
 interface PropertyReportModalProps {
   isOpen: boolean

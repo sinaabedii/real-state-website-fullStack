@@ -1,8 +1,8 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, Calculator, TrendingUp, DollarSign, Calendar, Percent, Info } from 'lucide-react'
+import { X, Calculator, TrendingUp, DollarSign, Calendar, Info } from 'lucide-react'
 import { Button, Card, Input } from '@/design-system'
 import { formatPrice } from '@/lib/utils'
 
@@ -30,7 +30,7 @@ const MortgageCalculatorModal: React.FC<MortgageCalculatorModalProps> = ({
   const [loanTerm, setLoanTerm] = useState(20) // years
   const [result, setResult] = useState<CalculationResult | null>(null)
 
-  const calculateMortgage = () => {
+  const calculateMortgage = useCallback(() => {
     const downPaymentAmount = (propertyPrice * downPayment) / 100
     const loanAmount = propertyPrice - downPaymentAmount
     const monthlyRate = interestRate / 100 / 12
@@ -61,11 +61,11 @@ const MortgageCalculatorModal: React.FC<MortgageCalculatorModalProps> = ({
       downPaymentAmount,
       loanAmount
     })
-  }
+  }, [propertyPrice, downPayment, interestRate, loanTerm])
 
   useEffect(() => {
     calculateMortgage()
-  }, [downPayment, interestRate, loanTerm, propertyPrice])
+  }, [downPayment, interestRate, loanTerm, propertyPrice, calculateMortgage])
 
   const getPaymentSchedule = () => {
     if (!result) return []

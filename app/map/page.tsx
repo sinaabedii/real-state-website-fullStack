@@ -4,7 +4,7 @@ import React, { useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import LeafletMap from '@/components/LeafletMap'
 import { mockProperties } from '@/lib/mock-data'
-import { formatPrice, getPropertyTypeLabel, getListingTypeLabel } from '@/lib/utils'
+import { formatPrice, getPropertyTypeLabel } from '@/lib/utils'
 import { Button, Card, Badge } from '@/design-system'
 import { MapPin, X, Home, Building, Briefcase, TreePine, Filter } from 'lucide-react'
 

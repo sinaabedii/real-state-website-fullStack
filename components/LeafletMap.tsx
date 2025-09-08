@@ -122,7 +122,7 @@ const LeafletMap: React.FC<MapProps> = ({
     }
 
     loadMap()
-  }, [center, zoom, markers, mapId])
+  }, [center, zoom, markers, mapId, fitToMarkers, onMarkerClick, useDarkTiles])
 
   return (
     <Card variant="elevated" padding="none" className={`overflow-hidden ${className}`}>

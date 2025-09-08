@@ -21,7 +21,6 @@ const PropertiesPage: React.FC = () => {
   const [sortBy, setSortBy] = useState<'newest' | 'price_low' | 'price_high' | 'area'>('newest')
   const [searchResults, setSearchResults] = useState(mockProperties)
   const [filters, setFilters] = useState<SearchFilters>({})
-  const [showMap, setShowMap] = useState(false)
 
   const filteredAndSortedProperties = useMemo(() => {
     const filtered = searchResults.filter(property => {

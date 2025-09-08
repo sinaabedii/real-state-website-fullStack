@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Button } from '@/design-system'
@@ -143,9 +144,11 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                 >
                   {/* Avatar */}
                   {currentUser?.avatar ? (
-                    <img
+                    <Image
                       src={currentUser.avatar}
                       alt={currentUser.name}
+                      width={32}
+                      height={32}
                       className="h-8 w-8 rounded-full object-cover"
                     />
                   ) : (
